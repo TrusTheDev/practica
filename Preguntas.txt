@@ -1,0 +1,2 @@
+Se puede hacer un arreglo de tamaño tal que se establezca en tiempo de ejecucion?
+
