@@ -1,0 +1,27 @@
+// Como declarar un arreglo
+/*
+Realiza un algoritmo que:
+a. Permita ingresar elementos a una matriz de 10 * 10.
+b. Ídem al anterior sólo que las dimensiones de la matriz (filas * col) se deberán solicitar al usuario.
+c. ¿Pueden resolverse ambos ítems con un mismo algoritmo de carga? ¿Cómo?
+*/
+
+Algoritmo ejercicio
+    Var
+    fila,columna,i,j, elemento: entero
+tipos 
+    tArreglo = arreglo [1..fila][1..columna]
+Inicio
+    fila <- 10
+    columna <-10
+    arregloA <- tArreglo
+    ingresar(fila)
+    ingresar(columna)
+    Desde i <- 1 hasta fila hacer
+        Desde j<- 1 hasta columna hacer
+            ingresar(elemento)
+            arregloA[i][j] <- elemento
+        Fin Desde
+    Fin Desde
+Fin
+
