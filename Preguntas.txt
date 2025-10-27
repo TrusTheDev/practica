@@ -1,2 +1,4 @@
 Se puede hacer un arreglo de tamaño tal que se establezca en tiempo de ejecucion?
 
+Arreglos bidimentionales, si tenemos un arreglo 2x2 se podria recorrer la posicion 3 y 4 por ejemplo?
+teniendo en cuenta la representacion

@@ -1,0 +1,103 @@
+//Especifica y desarrolla un subalgoritmo que reciba una matriz cuadrada y su dimensión lógica, para retornar un arreglo (y su dimensión)
+// con los números positivos de la matriz.
+//modularizar siempre que lo consideres
+
+Const
+    max = 10
+    tope = 20
+tipos
+    tMatriz = arreglo [1..MAX][1..MAX] de entero
+    tLista = arreglo [1..TOPE] de entero
+
+Algoritmo devolverPositivos(E: Lista: tLista, dimLogica: entero, S: PosLista: tLista, PosDim: entero )
+/*
+    nota: convengamos que el tope de la lista de entrada no refleja la cantidad total del arreglo bidimensional por lo que
+    el algoritmo retornara solamente los primeros 20 números positivos de la matriz bidimensional.
+    
+    Que hace: 
+    recibe una lista y su dimension lógica para retornar otra lista pero con números positivos junto a su dimension
+    
+    Pre condicion: 
+    Lista = l, dimLogica= dl; [1..MAX][1..MAX] perteneciente al rango de tMatriz los números enteros y dl <= MAX
+    
+    Post condicion:
+    PosLista = pl, PosDim = pd; [1..tope] perteneciente al rango de tlista  y Posdim <= tope rellena de enteros positivos
+    o vacia si no encuentra ninguna
+*/
+var 
+    PosLista: tLista;
+    PosDim: PosDim;
+    i: entero;
+Inicio
+    PosDim <- 1
+    i <- 1
+    Mientras PosDim <= 20 o i <= dimLogica hacer
+        Si Lista[i] > 0 entonces
+            PosLista[PosDim] <- Lista[i]
+            Posdim <- PosDim + 1
+        Fin si
+        i++
+    Fin mientras
+Fin 
+
+// ----------------------------------------------------------------------------
+//Especifica el siguiente subalgoritmo
+
+Const
+    TOPEF = 40
+    TOPEC = 30
+tipos
+    tMatriz = arreglo [1..TOPEF][1..TOPEC] de entero
+Funcion Ejercicio2 (E m: tMatriz; E dimF, dimC: entero) entero
+var
+    cont, fila, columna: entero
+Inicio
+    cont <- 0
+    desde fila <-- 1 hasta dimF hacer
+        desde columna <- 1 hasta dimC hacer
+            si m[fila][columna] mod 5 = 0 entonces
+                cont <- cont + m[fila][columna]
+            fin si
+        fin desde
+    fin desde
+    Ejercicio2 <-- cont
+Fin Funcion
+
+/*
+    Que hace? devuelve los multiplos de 5 de un arreglo bidimensional dado
+    Precondicion:   tMatriz = M, dimF = dF, dimC = dC; [1..dF][1..dimC] pertenecientes al rango de tMatriz
+    Post condicion: Ejercicio2 = x/x perteneciente al conjunto de los multiplos de 5
+*/
+
+// Define las constantes y los tipos de datos necesarios para este problema:
+/*
+Una asociacion protectora de animales desea registrar las mascotas que viven en su 
+refugio a la espera de ser adoptadas, cada mascota se identifica con un código numèrico, su tipo (perro, gato)
+si fue adoptado previamente (a veces las personas devuelven a las mascotas), su peso en kilogramos y su nombre.
+todas las mascotas son vacunadas y desparasitadas antes de su adopcion, se sabe que el refugio puede albergar
+como máximo a 40 mascotas, pero piensan ampliar su espacio para poder albergar 10 mascotas más
+*/
+const 
+    cupos = 50 + Ampliacion // esto es valido???
+tipos
+    tTipo = (perro, gato)
+        
+    tMascota = registro
+        codigo: entero
+        nombre: cadena
+        peso: real
+        tipo: tTipo
+        adoptadoPrev: logico
+        vacunas: logico
+        parasitos: logico
+    tArregloM = arreglo[1..cupos] de tMascota
+var
+    Ampliacion = 10
+
+    
+// Ejercicio 4 especifica y desarrolla un subalgoritmo que dada una lista de socios de un club deportivo
+// permita eliminar uno de ellos, la lista esta formada por registros cuyos campos son código, número de celular
+// nombre y fecha de alta, la lista se encuentra ordenada por código, los códigos son valores entre 1 y 1000 para la eliminacion es necesario
+//contar con el codigo y buscar por ese valor.
+
+// Que significa eliminar? 
