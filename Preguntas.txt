@@ -2,3 +2,6 @@ Se puede hacer un arreglo de tamaño tal que se establezca en tiempo de ejecucio
 
 Arreglos bidimentionales, si tenemos un arreglo 2x2 se podria recorrer la posicion 3 y 4 por ejemplo?
 teniendo en cuenta la representacion
+
+Algoritmo de busqueda binaria, en el codigo, es posible inicializar la variable auxiliar de manera de que
+porlomenos en la decision de dividir por 2 sea evitada y directamente comparar si son iguales? podria ser mas rapido.

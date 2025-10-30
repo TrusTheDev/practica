@@ -1,0 +1,30 @@
+Procedimiento RecibirStock(E/S articulos: tMatrizArticulos, E: dimension: entero, S: Lista: tListaArticulos)
+/*
+    Que hace? recibe una matriz de articulos y devuelve una lista de articulos cuyo stock este por debajo de 10 y que esten dados de alta.
+    Precondiciones: tMatrizArticulos = M, dimension = D; [1..dimension][1..dimension] perteneciente al rango de tMatrizArticulos
+    Postcondiciones: Lista = L; [1..dimension*dimension] perteneciente al rango de tListaArticulos
+    conteniendo 0 o D articulos cuyo stock se encuentre por debajo de 10 y que esten dados de alta
+*/
+var 
+i,j,dimL entero
+Inicio
+    dimL <- 0
+    Desde i<- 1 hasta dimension hacer
+        Desde j <- 1 hasta dimension hacer
+            Si stock0(articulos[i][j]) y articulos[i][j].activo hacer
+                dimL <- dimL + 1
+                Lista[dimL] <- articulos[i][j]
+            fin si
+        fin desde
+    fin desde
+fin
+
+
+
+/*
+    Que hace? divide las posiciones pares de 2 arreglos bidimensionales dados.
+    Precondiciones: m1 = M1, m2 = M2; [1..TOPE][1..TOPE] perteneciente al rango de tMatriz
+    el arreglo no puede estar vacio y el valor en la posición del arreglo m2[i][j] != 0.
+    Post condiciones: m1 = M1' conteniendo en sus posiciones pares el resultado de dividir
+    ambos arreglos en sus posiciones pares.
+*/
