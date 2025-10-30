@@ -95,9 +95,72 @@ var
     Ampliacion = 10
 
     
-// Ejercicio 4 especifica y desarrolla un subalgoritmo que dada una lista de socios de un club deportivo
+
+const
+    MAX = 1000
+tipos
+    tFecha = registro
+        dia: entero
+        mes: entero
+        año: entero
+
+
+    tSocio = registro
+        codigo : entero
+        celular: entero
+        nombre: cadena
+        fechaAlta: tFecha
+
+    tArreglo = arreglo [1..1000] de tSocio
+
+    // Ejercicio 4 especifica y desarrolla un subalgoritmo que dada una lista de socios de un club deportivo
 // permita eliminar uno de ellos, la lista esta formada por registros cuyos campos son código, número de celular
 // nombre y fecha de alta, la lista se encuentra ordenada por código, los códigos son valores entre 1 y 1000 para la eliminacion es necesario
 //contar con el codigo y buscar por ese valor.
 
-// Que significa eliminar? 
+Procedimiento eliminarSocio (E/S socios:tArreglo,dim: entero E:codigo: entero )
+/* Qué hace: elimina el registro de un arreglo de registros dado segun el codigo.
+/* Precondiciones:  socios = S, codigo = C; dim, D, [1...MAX] perteneciente al rango de tArreglo. y dim <= MAX
+ * Poscondiciones: socios = S' sin el socio eliminado.*/ 
+Variables
+    posicion entero;
+Inicio
+    posicion <- binaria(tArreglo, dim, codigo)
+    si posicion <> -1 entonces 
+        dim <- dim - 1
+        eliminar(socios, dim,posicion)
+    sino
+        mostrar("Socio inexistente")
+    fin si
+Fin Procedimiento
+
+Procedimiento eliminar(E/S: lista:tlista, dim,posicion: entero)
+Inicio
+    Mientras posicion <> dim + 1 hacer
+        lista[posicion] = lista[posicion + 1]
+        posicion <- posicion + 1
+    fin mientras
+Fin Procedimiento
+    
+funcion binaria(E/S elementos:tArreglo,entrada: dim,elemento: entero ): entero
+var
+    pos,principio,final,aux
+Inicio
+    principio <- 1
+    final <- dim
+    pos <- -1
+
+    mientras pos = -1 y principio <= final hacer
+        aux <- (principio+final) / 2
+        si elementos[aux] = elemento entonces
+            pos <- aux
+        sino
+        
+        si elementos[aux] < elemento entonces
+            principio <- aux + 1
+        sino
+            final <- aux - 1
+        fin si
+    fin mientras
+    binaria <- pos
+Fin
